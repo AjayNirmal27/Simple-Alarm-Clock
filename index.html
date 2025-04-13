@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alarm Clock</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</head>
+<body>
+  <div class="container">
+    <audio id="alarmSound" preload="auto">
+      <source src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <h1><span class="clock-icon">⏰</span> <span class="app-name">Alarm Clock</span></h1>
+
+    <div id="clock">00:00:00 AM</div>
+    <div id="toast"></div>
+
+    <!-- ALARM TIME INPUT -->
+<input type="text" id="alarmTimePicker" placeholder="Select Time">
+<input type="text" id="alarmLabel" placeholder="Label (optional)">
+<!-- Alarm Options -->
+<label style="display: inline-block; margin-top: 10px;">
+  <input type="checkbox" id="repeatDaily">
+  Repeat Daily
+</label>
+
+<label style="display: inline-block; margin-left: 15px;">
+  <input type="checkbox" id="repeatOnce">
+  Repeat Once
+</label>
+
+
+<!-- SET ALARM BUTTON -->
+<button id="setBtn" onclick="setAlarm()">Set Alarm</button>
+
+
+<!-- ACTION BUTTONS -->
+<div style="margin-top: 10px;">
+  <button id="stopBtn" onclick="stopAlarm()" disabled>Stop</button>
+  <button id="snoozeBtn" onclick="snoozeAlarm()" disabled>Snooze +10m</button>
+ 
+</div>
+
+<!-- STATUS -->
+<p id="status">No alarm set.</p>
+
+
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
